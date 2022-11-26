@@ -1,6 +1,6 @@
 # Mammogram Mass Analyzer
 This is a free desktop computer aided diagnosis (CAD) tool that uses computer vision to detect and localize masses on full field digital mammograms.
-It's a flask app that's running on the desktop.
+It's a flask app that's running on the desktop. Internally there’s a Yolov5L model that was trained on data from the VinDR-Mammo dataset.
 
 My aim was to create a proof of concept for a free desktop computer aided diagnosis (CAD) system that could be used as an aid when diagnosing breast cancer. Unlike a web app, this tool does not need an internet connection and there are no monthly server rental costs. I think a desktop tool could be helpful to radiologists in private practice and to medical non-profits that work in remote areas.
 
