@@ -8,7 +8,7 @@ My aim was to create a proof of concept for a free desktop computer aided diagno
 
 <br>
 <img src="https://github.com/vbookshelf/Mammogram-Mass-Analyzer/blob/main/images/sample_image.png" height="300"></img>
-<i>Sample mammogram</i><br>
+<i>Sample mammogram from the VinDr-Mammo dataset</i><br>
 <br>
 
 ## Main features
