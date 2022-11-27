@@ -2,7 +2,7 @@
 This is a free desktop computer aided diagnosis (CAD) tool that uses computer vision to detect and localize masses on full field digital mammograms.
 It's a flask app that's running on the desktop. Internally there’s a Yolov5L model that was trained on data from the VinDR-Mammo dataset.
 
-My aim was to create a proof of concept for a free desktop computer aided diagnosis (CAD) system that could be used as an aid when diagnosing breast cancer. Unlike a web app, this tool does not need an internet connection and there are no monthly server rental costs. I think a desktop tool could be helpful to radiologists in private practice and to medical non-profits that work in remote areas.
+My aim was to create a proof of concept for a free desktop computer aided diagnosis (CAD) system that could be used as an aid when diagnosing breast cancer. Unlike a web app, this tool does not need an internet connection and there are no monthly costs for hosting and web server rental. I think a desktop tool could be helpful to radiologists in private practice and to medical non-profits that work in remote areas.
 
 [ REPO UNDER CONSTRUCTION ]
 
@@ -13,13 +13,87 @@ My aim was to create a proof of concept for a free desktop computer aided diagno
 
 ## Main features
 
-1- Runs locally therefore no internet connection is needed.<br>
-2- Accepts dicom files.<br>
-3- Uses the CPU for inference<br>
-4- The results are explainable because the app outputs images with bounding boxes.<br>
-5- If you know flask, html, css and a bit of javascrpt - you can easily modify this app for other computer vision projects.
+- Free to use. Free to deploy. No monthly server rental costs like with a web app.
+- Completely transparent. All code is accessible and therefore fully auditable.
+- Runs locally without needing an internet connection
+- Takes mammograms in dicom format as input
+- Can analyze multiple mammograms simultaneously
+- Uses the computer’s cpu - a gpu is not essential.
+- Results are explainable because it draws bounding boxes around detected masses
+- Patient data remains private because it never leaves the user’s computer
+- Easy to customize because this is just a Flask app built using html, css and javascript.
+
+## Cons
+
+- It’s not a one click setup. The user needs to have a basic knowledge of how to use the command line to set up a virtual environment, download requirements and launch a python app.
+- The processing time per image is about 5 seconds because the inference is being done using the CPU.
+- When diagnosing breast cancer radiologists look for masses, calcifications and architectural distortions. However, this app can only detect masses. The model was not trained to detect calcifications and architectural distortions because there was not enough data for these classes.
+- The amount of positive samples in the training data was limited. The accuracy and recall could be improved with more training data.
+
 
 
 ## Demo
 
 Add gif here..
+
+<br>
+
+## How to run this app
+
+### High Level Overview
+
+This is a standard flask app. The steps to set up and run the app are the same for both Mac and Windows.
+
+1. Download the project folder.
+2. Use the command line to pip install the requirements listed in the requirements.txt file. (It’s located inside the project folder.) 
+3. Run the app.py file from the command line.
+4. Copy the url that gets printed in the console.
+5. Paste that url into your chrome browser and press Enter. The app will open in the browser.
+
+This app is based on Flask and Pytorch, both of which are pure python. If you encounter any errors during installation you should be able to solve them quite easily. You won’t have to deal with the cuda related package dependency issues that happen when you use Tensorflow.
+
+### Detailed setup instructions
+
+The instructions below are for a Mac. I didn't include instructions for Windows because I don't have a Windows pc and therefore, I could not test the installtion process on windows. If you’re using a Windows pc then please change the commands below to suit Windows. 
+
+You’ll need an internet connection during the first setup. After that you’ll be able to use the app without an internet connection.
+
+```
+
+1. Download the project folder, unzip it and place it on your desktop.
+Then open your command line console.
+The instructions that follow should be typed on the command line. There’s no need to type the $ symbol.
+
+2. $ cd Desktop
+
+3. $ cd project_folder
+
+4. Create a virtual environment. (Here it’s named myvenv)
+This only needs to be done once when the app is first installed. 
+When you want to run the app again you can skip this step.
+$ python3.7 -m venv myvenv
+
+5. Activate the virtual environment
+$ source myvenv/bin/activate
+
+4. Install the requirements.
+This only needs to be done once when the app is first installed.
+When you want to run the app again you can skip this step.
+$ pip install -r requirements.txt
+
+5. Launch the app<br>
+$ python app.py
+
+6. Copy the url that gets printed out (e.g. http://127.0.0.1:5000)
+
+7. Paste the url into your chrome browser and press Enter. The app will launch in the browser. 
+
+8. To stop the app type ctrl C in the console.
+Then deactivate the virtual environment.
+$ deactivate
+
+```
+
+There are sample mammograms in the sample_dicom_files folder. You can use them to test the app.
+
+While the app is analyzing, please look in the console to see if there are any errors. If there are errors, please do what’s needed to address them. Then relaunch the app.
