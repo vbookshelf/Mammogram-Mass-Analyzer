@@ -23,6 +23,8 @@ My aim was to create a proof of concept for a free desktop computer aided diagno
 - Patient data remains private because it never leaves the user’s computer
 - Easy to customize because this is just a Flask app built using html, css and javascript.
 
+<br>
+
 ## Cons
 
 - It’s not a one click setup. The user needs to have a basic knowledge of how to use the command line to set up a virtual environment, download requirements and launch a python app.
@@ -30,7 +32,7 @@ My aim was to create a proof of concept for a free desktop computer aided diagno
 - When diagnosing breast cancer radiologists look for masses, calcifications and architectural distortions. However, this app can only detect masses. The model was not trained to detect calcifications and architectural distortions because there was not enough data for these classes.
 - The amount of positive samples in the training data was limited. The accuracy and recall could be improved with more training data.
 
-
+<br>
 
 ## Demo
 
@@ -39,6 +41,8 @@ Add gif here..
 <br>
 
 ## How to run this app
+
+<br>
 
 ### High Level Overview
 
@@ -51,6 +55,8 @@ This is a standard flask app. The steps to set up and run the app are the same f
 5. Paste that url into your chrome browser and press Enter. The app will open in the browser.
 
 This app is based on Flask and Pytorch, both of which are pure python. If you encounter any errors during installation you should be able to solve them quite easily. You won’t have to deal with the cuda related package dependency issues that happen when you use Tensorflow.
+
+<br>
 
 ### Detailed setup instructions
 
@@ -97,3 +103,60 @@ $ deactivate
 There are sample mammograms in the sample_dicom_files folder. You can use them to test the app.
 
 While the app is analyzing, please look in the console to see if there are any errors. If there are errors, please do what’s needed to address them. Then relaunch the app.
+
+<br>
+
+## 3- Model Training and Validation
+
+For a detailed overview of the model, please refer to the model card. 
+
+The code for model training and validation is in this notebook:
+
+<br>
+
+## 4- Licenses
+
+All code that I have created is free to use under an MIT license.
+ 
+However, please note that the VinDR-Mammo dataset that was used to train the model is licensed under a PhysioNet Restricted Health Data License 1.5.0. - this means that the data can be used for scientific research only. Therefore, the model that powers this app cannot be used for commercial purposes.<br>
+PhysioNet Restricted Health Data License 1.5.0<br>
+https://physionet.org/content/vindr-mammo/view-license/1.0.0/
+
+The Ultralytics Yolov5 model is licensed under a GNU General Public License.<br>
+https://github.com/ultralytics/yolov5/blob/master/LICENSE
+
+<br>
+
+## 5- Citations
+
+Pham, H. H., Nguyen Trung, H., & Nguyen, H. Q. (2022). VinDr-Mammo: A large-scale benchmark dataset for computer-aided detection and diagnosis in full-field digital mammography (version 1.0.0). PhysioNet. https://doi.org/10.13026/br2v-7517.
+
+Goldberger, A., Amaral, L., Glass, L., Hausdorff, J., Ivanov, P. C., Mark, R., ... & Stanley, H. E. (2000). PhysioBank, PhysioToolkit, and PhysioNet: Components of a new research resource for complex physiologic signals. Circulation [Online]. 101 (23), pp. e215–e220.
+
+<br>
+
+## 6- Acknowledgments
+
+I don’t have my own GPU. I trained the model using Kaggle Notebooks. Many thanks to Kaggle for the free GPU and other great resources they continue to provide.
+
+I also want to thank VinDR for the dataset that they’ve generously made publicly available.
+
+Many thanks to the team at Ultralytics for the Yolov5 model and pre-trained weights they’ve made freely available..
+
+<br>
+
+## 7- References
+
+Ultralytics Yolov5<br>
+https://github.com/ultralytics/yolov5
+
+VinDr-Mammo: A large-scale benchmark dataset for computer-aided diagnosis in full-field digital mammography<br>
+https://arxiv.org/abs/2203.11205
+
+VinDR-Mammo Dataset<br>
+https://physionet.org/content/vindr-mammo/1.0.0/
+
+The Complete Python Course | Learn Python by Doing in 2022
+Udemy<br>
+https://www.udemy.com/course/the-complete-python-course/
+
