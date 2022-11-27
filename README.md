@@ -47,9 +47,6 @@ Add gif here..
 
 ## 3- How to run this app
 
-<br>
-
-### High Level Overview
 
 This is a standard flask app. The steps to set up and run the app are the same for both Mac and Windows.
 
