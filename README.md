@@ -1,8 +1,6 @@
 # Mammogram Mass Analyzer
 This is a free desktop computer aided diagnosis (CAD) tool that uses computer vision to detect and localize masses on full field digital mammograms.
-It's a flask app that's running on the desktop. Internally there’s a Yolov5L model that was trained on data from the VinDR-Mammo dataset.
-
-My aim was to create a proof of concept for a free desktop computer aided diagnosis (CAD) system that could be used as an aid when diagnosing breast cancer. Unlike a web app, this tool does not need an internet connection and there are no monthly costs for hosting and web server rental. I think a desktop tool could be helpful to radiologists in private practice and to medical non-profits that work in remote areas.
+It's a flask app that's running on the desktop. Internally there’s a Yolov5L model that was trained on data from the VinDR-Mammo dataset. The model has a validation accuracy of 0.63 and a validation recall of 0.60.
 
 [ REPO UNDER CONSTRUCTION ]
 
@@ -11,7 +9,16 @@ My aim was to create a proof of concept for a free desktop computer aided diagno
 <i>Sample mammogram from the VinDr-Mammo dataset</i><br>
 <br>
 
-## Main features
+<br>
+
+## Demo
+
+Add gif here..
+
+<br>
+
+
+## 1 - Main features
 
 - Free to use. Free to deploy. No monthly server rental costs like with a web app.
 - Completely transparent. All code is accessible and therefore fully auditable.
@@ -25,22 +32,18 @@ My aim was to create a proof of concept for a free desktop computer aided diagno
 
 <br>
 
-## Cons
+## 2- Cons
 
 - It’s not a one click setup. The user needs to have a basic knowledge of how to use the command line to set up a virtual environment, download requirements and launch a python app.
 - The processing time per image is about 5 seconds because the inference is being done using the CPU.
 - When diagnosing breast cancer radiologists look for masses, calcifications and architectural distortions. However, this app can only detect masses. The model was not trained to detect calcifications and architectural distortions because there was not enough data for these classes.
 - The amount of positive samples in the training data was limited. The accuracy and recall could be improved with more training data.
 
-<br>
 
-## Demo
-
-Add gif here..
 
 <br>
 
-## How to run this app
+## 3- How to run this app
 
 <br>
 
@@ -106,7 +109,7 @@ While the app is analyzing, please look in the console to see if there are any e
 
 <br>
 
-## 3- Model Training and Validation
+## 4- Model Training and Validation
 
 For a detailed overview of the model, please refer to the model card. 
 
@@ -114,7 +117,7 @@ The code for model training and validation is in this notebook:
 
 <br>
 
-## 4- Licenses
+## 5- Licenses
 
 All code that I have created is free to use under an MIT license.
  
@@ -127,7 +130,7 @@ https://github.com/ultralytics/yolov5/blob/master/LICENSE
 
 <br>
 
-## 5- Citations
+## 6- Citations
 
 Pham, H. H., Nguyen Trung, H., & Nguyen, H. Q. (2022). VinDr-Mammo: A large-scale benchmark dataset for computer-aided detection and diagnosis in full-field digital mammography (version 1.0.0). PhysioNet. https://doi.org/10.13026/br2v-7517.
 
@@ -135,7 +138,7 @@ Goldberger, A., Amaral, L., Glass, L., Hausdorff, J., Ivanov, P. C., Mark, R., .
 
 <br>
 
-## 6- Acknowledgments
+## 7- Acknowledgments
 
 I don’t have my own GPU. I trained the model using Kaggle Notebooks. Many thanks to Kaggle for the free GPU and other great resources they continue to provide.
 
@@ -145,7 +148,7 @@ Many thanks to the team at Ultralytics for the Yolov5 model and pre-trained weig
 
 <br>
 
-## 7- References
+## 8- References
 
 Ultralytics Yolov5<br>
 https://github.com/ultralytics/yolov5
