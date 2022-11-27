@@ -165,3 +165,22 @@ The Complete Python Course | Learn Python by Doing in 2022
 Udemy<br>
 https://www.udemy.com/course/the-complete-python-course/
 
+<br>
+
+## 9- Acronyms
+
+These are a few acronyms I came across during tis project.
+
+
+SFM - screen-film mammography<br>
+FFDM - full-field digital mammography<br>
+BI-RADS - Breast Imaging Reporting and Data System<br>
+CADe/x - Computer-aided detection and diagnosis<br>
+HMUH - Hanoi Medical University Hospital<br>
+H108 - Hospital 108<br>
+PACS - Picture Archiving and Communication Systems<br>
+CC - craniocaudal (looking through the breast from above)<br>
+MLO - mediolateral oblique (looking through the breast from the side)<br>
+L - Patient's left<br>
+R - Patient's right<br>
+
