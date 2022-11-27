@@ -18,7 +18,7 @@ My aim was to create a proof of concept for a free desktop computer aided diagno
 - Runs locally without needing an internet connection
 - Takes mammograms in dicom format as input
 - Can analyze multiple mammograms simultaneously
-- Uses the computer’s cpu - a gpu is not essential.
+- Uses the computer’s cpu. A gpu would make the app much faster, but it's not essential.
 - Results are explainable because it draws bounding boxes around detected masses
 - Patient data remains private because it never leaves the user’s computer
 - Easy to customize because this is just a Flask app built using html, css and javascript.
