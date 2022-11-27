@@ -11,7 +11,7 @@ It's a flask app that's running on the desktop. Internally there’s a Yolov5L m
 
 My aim was to create a proof of concept for a free desktop computer aided diagnosis (CAD) system that could be used as an aid when diagnosing breast cancer. Unlike a web app, this tool does not need an internet connection and there are no monthly costs for hosting and web server rental. I think a desktop tool could be helpful to radiologists in private practice and to medical non-profits that work in remote areas. 
 
-This app can also be used as a template for building other computer vision desktop Flask apps. By reviewing the code you'll be able to see:
+This app can also be used as an example when building other computer vision desktop Flask apps. By reviewing the code you'll be able to see:
 - How to integrate a Yolov5 model into a flask app
 - How to use Ajax to implement asynchronous communication between Flask and the web page
 - How to preload images so that the app feels smooth
