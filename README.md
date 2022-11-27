@@ -2,14 +2,21 @@
 This is a free desktop computer aided diagnosis (CAD) tool that uses computer vision to detect and localize masses on full field digital mammograms.
 It's a flask app that's running on the desktop. Internally there’s a Yolov5L model that was trained on data from the VinDR-Mammo dataset. The model has a validation accuracy of 0.63 and a validation recall of 0.60.
 
-My aim was to create a proof of concept for a free desktop computer aided diagnosis (CAD) system that could be used as an aid when diagnosing breast cancer. Unlike a web app, this tool does not need an internet connection and there are no monthly costs for hosting and web server rental. I think a desktop tool could be helpful to radiologists in private practice and to medical non-profits that work in remote areas.
-
 [ REPO UNDER CONSTRUCTION ]
 
 <br>
 <img src="https://github.com/vbookshelf/Mammogram-Mass-Analyzer/blob/main/images/sample_image.png" height="300"></img>
 <i>Sample mammogram from the VinDr-Mammo dataset</i><br>
 <br>
+
+My aim was to create a proof of concept for a free desktop computer aided diagnosis (CAD) system that could be used as an aid when diagnosing breast cancer. Unlike a web app, this tool does not need an internet connection and there are no monthly costs for hosting and web server rental. I think a desktop tool could be helpful to radiologists in private practice and to medical non-profits that work in remote areas. 
+
+This app can also be used as a template for building other computer vision desktop Flask apps. By reviewing the code you'll be able to see:
+- How to integrate a Yolov5 model into a flask app
+- How to use Ajax to implement asynchronous communication between Flask and the web page
+- How to preload images so that the app feels smooth
+- How to work with dicom files as input
+
 
 <br>
 
