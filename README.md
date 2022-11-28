@@ -63,7 +63,7 @@ This is a standard flask app. The steps to set up and run the app are the same f
 4. Copy the url that gets printed in the console.
 5. Paste that url into your chrome browser and press Enter. The app will open in the browser.
 
-This app is based on Flask and Pytorch, both of which are pure python. If you encounter any errors during installation you should be able to solve them quite easily. You won’t have to deal with the cuda related package dependency issues that happen when you use Tensorflow.
+This app is based on Flask and Pytorch, both of which are pure python. If you encounter any errors during installation you should be able to solve them quite easily. You won’t have to deal with the cuda related package dependency issues that happen when using Tensorflow.
 
 <br>
 
