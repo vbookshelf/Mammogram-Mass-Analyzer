@@ -76,8 +76,10 @@ You’ll need an internet connection during the first setup. After that you’ll
 ```
 
 1. Download the project folder, unzip it and place it on your desktop.
+In this repo the project folder is named: mammogram-mass-analyzer-v0.0
 Then open your command line console.
-The instructions that follow should be typed on the command line. There’s no need to type the $ symbol.
+The instructions that follow should be typed on the command line. 
+There’s no need to type the $ symbol.
 
 2. $ cd Desktop
 
