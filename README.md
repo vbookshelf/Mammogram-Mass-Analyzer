@@ -86,7 +86,8 @@ There’s no need to type the $ symbol.
 3. $ cd project_folder
 
 4. Create a virtual environment. (Here it’s named myvenv)
-This only needs to be done once when the app is first installed. 
+This only needs to be done once when the app is first installed.
+You will need to have python3.8 on the system.
 When you want to run the app again you can skip this step.
 $ python3.8 -m venv myvenv
 
@@ -98,7 +99,8 @@ This only needs to be done once when the app is first installed.
 When you want to run the app again you can skip this step.
 $ pip install -r requirements.txt
 
-5. Launch the app<br>
+5. Launch the app.
+This make take a few seconds the first time.
 $ python app.py
 
 6. Copy the url that gets printed out (e.g. http://127.0.0.1:5000)
