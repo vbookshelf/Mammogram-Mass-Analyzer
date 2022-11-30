@@ -88,7 +88,7 @@ There’s no need to type the $ symbol.
 4. Create a virtual environment. (Here it’s named myvenv)
 This only needs to be done once when the app is first installed. 
 When you want to run the app again you can skip this step.
-$ python3.7 -m venv myvenv
+$ python3.8 -m venv myvenv
 
 5. Activate the virtual environment
 $ source myvenv/bin/activate
