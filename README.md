@@ -73,6 +73,18 @@ The instructions below are for a Mac. I didn't include instructions for Windows 
 
 You’ll need an internet connection during the first setup. After that you’ll be able to use the app without an internet connection.
 
+If you are a beginner you may find these resources helpful:
+
+The Complete Guide to Python Virtual Environments!<br>
+Teclado<br>
+(Includes instructions for Windows)<br>
+https://www.youtube.com/watch?v=KxvKCSwlUv8&t=947s
+
+How To Create Python Virtual Environments On A Mac<br>
+https://www.youtube.com/watch?v=MzuGMSw8la0&t=167s
+
+<br>
+
 ```
 
 1. Download the project folder, unzip it and place it on your desktop.
