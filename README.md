@@ -1,6 +1,6 @@
 # Mammogram Mass Analyzer
 This is a free desktop computer aided diagnosis (CAD) tool that uses computer vision to detect and localize masses on full field digital mammograms.
-It's a flask app that's running on the desktop. Internally there’s a Yolov5L model that was trained on data from the VinDR-Mammo dataset. The model has a validation accuracy of 0.63 and a validation recall of 0.60.
+It's a flask app that's running on the desktop. Internally there’s a Yolov5L model that was trained on data from the VinDR-Mammo dataset. The model has a validation accuracy of 0.65 and a validation recall of 0.63.
 
 [ REPO UNDER CONSTRUCTION ]
 
@@ -133,9 +133,27 @@ While the app is analyzing, please look in the console to see if there are any e
 
 ## 4- Model Training and Validation
 
-For a detailed overview of the model, please refer to the model card. 
+The model card contains a summary of the training and validation datasets as well as the validation results. I've also included a confusion matrix and classification report. There's also some info on the app. Please refer to this document:
 
-The code for model training and validation is in this notebook:
+All the project jupyter notebooks are stored in the folder called "Notebooks". There are five notebooks. 
+Each notebook was run in one of three locations: Locally on my laptop, on Kaggle and on VAST.
+
+Exp_06-LOCAL
+This contains the code to select the training and validation data from the original VinDr-Mammo dataset.
+
+Exp_49-Kaggle
+This contains the code to create 10 folds. Only fold 0 was used for training and validation.
+
+Exp_50-VAST
+The code for training and validating the first model.
+
+Exp_51-VAST
+The code for training and validating the second model.
+
+Exp_52-Kaggle
+The code for ensembling the two models and checking the performance of this ensemble on the Fold 0 validation data.
+
+
 
 <br>
 
