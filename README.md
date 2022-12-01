@@ -108,7 +108,7 @@ There’s no need to type the $ symbol.
 
 4. Create a virtual environment. (Here it’s named myvenv)
 This only needs to be done once when the app is first installed.
-You will need to have python3.8 on the system.
+You'll need to have python3.8 available on your computer.
 When you want to run the app again you can skip this step.
 $ python3.8 -m venv myvenv
 
