@@ -44,7 +44,7 @@ Add gif here..
 ## 2- Cons
 
 - It’s not a one click setup. The user needs to have a basic knowledge of how to use the command line to set up a virtual environment, download requirements and launch a python app.
-- The processing time per image is about 5 seconds because the inference is being done using the CPU.
+- The processing time per image is about 10 seconds because the inference is being done using the CPU.
 - When diagnosing breast cancer radiologists look for masses, calcifications and architectural distortions. However, this app can only detect masses. The model was not trained to detect calcifications and architectural distortions because there was not enough data for these classes.
 - The amount of positive samples in the training data was limited. The accuracy and recall could be improved with more training data.
 
@@ -54,9 +54,15 @@ Add gif here..
 
 ## 3- How to run this app
 
-First download the project folder from Kaggle:
-I've stored the project folder (named mammogram-mass-analyzer-v0.0) in a Kaggle dataset. I suggest that you download the project folder from the Kaggle instead of from this GitHub repo. This is because the project folder on Kaggle includes the two trained models. The prject folder in this repo does not included the trained models beacause GitHub does not allow files larger than 25MB to be uploaded. The models are located inside a folder called TRAINED_MODEL_FOLDER, which is located inside the yolov5 folder: mammogram-mass-analyzer-v0.0/yolov5/TRAINED_MODEL_FOLDER/
+### First download the project folder from Kaggle
 
+I've stored the project folder (named mammogram-mass-analyzer-v0.0) in a Kaggle dataset. I suggest that you download the project folder from the Kaggle instead of from this GitHub repo. This is because the project folder on Kaggle includes the two trained models. The project folder in this repo does not included the trained models because GitHub does not allow files larger than 25MB to be uploaded.<br>
+The models are located inside a folder called TRAINED_MODEL_FOLDER, which is located inside the yolov5 folder:<br>
+mammogram-mass-analyzer-v0.0/yolov5/TRAINED_MODEL_FOLDER/
+
+<br>
+
+### Overview
 
 This is a standard flask app. The steps to set up and run the app are the same for both Mac and Windows.
 
