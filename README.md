@@ -23,7 +23,7 @@ This app can also be used as an example when building other computer vision desk
 
 <br>
 <img src="https://github.com/vbookshelf/Mammogram-Mass-Analyzer/blob/main/images/demo1.gif" height="400"></img>
-<i>Demo showing what happens after the user selects three dicom mammograms</i><br>
+<i>Demo showing what happens after a user selects three dicom mammograms</i><br>
 <br>
 
 <br>
