@@ -22,7 +22,10 @@ This app can also be used as an example when building other computer vision desk
 
 ## Demo
 
-Add gif here..
+<br>
+<img src="https://github.com/vbookshelf/Mammogram-Mass-Analyzer/blob/main/images/demo1.gif" height="400"></img>
+<i>Demo showing what happens after the user selects three dicom files</i><br>
+<br>
 
 <br>
 
