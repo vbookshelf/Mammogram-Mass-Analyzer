@@ -142,7 +142,7 @@ While the app is analyzing, please look in the console to see if there are any e
 
 ## 4- Model Training and Validation
 
-The model card contains a summary of the training and validation datasets as well as the validation results. I've also included a confusion matrix and classification report. There's also some info on the app. Please refer to this document:
+The model card contains a summary of the training and validation datasets as well as the validation results. I've also included a confusion matrix and classification report. There's also some info on the app. Please refer to this document:<br>
 https://github.com/vbookshelf/Mammogram-Mass-Analyzer/blob/main/mammogram-mass-analyzer-v0.0/Model-Card-and-App-Info.pdf
 
 All the project jupyter notebooks are stored in the folder called "Notebooks". There are five notebooks. 
