@@ -199,9 +199,15 @@ https://arxiv.org/abs/2203.11205
 VinDR-Mammo Dataset<br>
 https://physionet.org/content/vindr-mammo/1.0.0/
 
-The Complete Python Course | Learn Python by Doing in 2022
+The Complete Python Course | Learn Python by Doing in 2022<br>
 Udemy<br>
 https://www.udemy.com/course/the-complete-python-course/
+
+Flask experiments<br>
+https://github.com/vbookshelf/Flask-Experiments
+
+W3.CSS Tutorial<br>
+https://www.w3schools.com/w3css/defaulT.asp
 
 <br>
 
