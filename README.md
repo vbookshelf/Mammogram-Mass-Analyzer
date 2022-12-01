@@ -54,6 +54,9 @@ Add gif here..
 
 ## 3- How to run this app
 
+First download the project folder from Kaggle:
+I've stored the project folder (named mammogram-mass-analyzer-v0.0) in a Kaggle dataset. I suggest that you download the project folder from the Kaggle instead of from this GitHub repo. This is because the project folder on Kaggle includes the two trained models. The prject folder in this repo does not included the trained models beacause GitHub does not allow files larger than 25MB to be uploaded. The models are located inside a folder called TRAINED_MODEL_FOLDER, which is located inside the yolov5 folder: mammogram-mass-analyzer-v0.0/yolov5/TRAINED_MODEL_FOLDER/
+
 
 This is a standard flask app. The steps to set up and run the app are the same for both Mac and Windows.
 
