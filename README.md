@@ -233,7 +233,7 @@ https://www.w3schools.com/w3css/defaulT.asp
 
 ## 9- Acronyms
 
-These are a few acronyms I came across during tis project.
+These are a few acronyms I came across during this project.
 
 
 SFM - screen-film mammography<br>
