@@ -207,7 +207,7 @@ https://github.com/ultralytics/yolov5
 VinDr-Mammo: A large-scale benchmark dataset for computer-aided diagnosis in full-field digital mammography<br>
 https://arxiv.org/abs/2203.11205
 
-VinDR-Mammo Dataset<br>
+VinDr-Mammo Dataset<br>
 https://physionet.org/content/vindr-mammo/1.0.0/
 
 The Complete Python Course | Learn Python by Doing in 2022<br>
