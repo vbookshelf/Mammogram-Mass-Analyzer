@@ -204,7 +204,7 @@ Many thanks to the team at Ultralytics for the Yolov5 model and pre-trained weig
 
 <br>
 
-## 8- References
+## 8- References and Resources
 
 Introduction to Mammography<br>
 https://www.youtube.com/watch?v=dEdR4iOdLh0
