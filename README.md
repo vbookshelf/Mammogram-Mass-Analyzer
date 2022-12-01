@@ -1,6 +1,6 @@
 # Mammogram Mass Analyzer
 This is a free desktop computer aided diagnosis (CAD) tool that uses computer vision to detect and localize masses on full field digital mammograms.
-It's a flask app that's running on the desktop. Internally there are two Yolov5L ensembled models that were trained on data from the VinDR-Mammo dataset. The model ensemble has a validation accuracy of 0.65 and a validation recall of 0.63.
+It's a flask app that's running on the desktop. Internally there are two Yolov5L ensembled models that were trained on data from the VinDr-Mammo dataset. The model ensemble has a validation accuracy of 0.65 and a validation recall of 0.63.
 
 [ REPO UNDER CONSTRUCTION ]
 
