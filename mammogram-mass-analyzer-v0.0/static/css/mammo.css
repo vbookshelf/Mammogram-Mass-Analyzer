@@ -1,0 +1,382 @@
+
+
+.header-bground {
+	/*background-color: 	#262335;*/
+	background-color: #1a2228; /* mirage */
+	
+}
+
+.make-scrollable {
+    width: 400px;
+    height: 495px;
+	overflow-x: hidden;
+	overflow-y: auto;
+}
+
+
+.results-box {
+	width: 400px;
+}
+
+
+.btn-color {
+	background-color: #262335;
+	/*background-color: #262335;*/ /* steel grey */
+}
+
+
+.dark-color {
+	background-color: #232b2b;
+	/*background-color: #262335;8?
+	/*background-color: #262335;*/ /* steel grey */
+}
+
+.hover-color:hover { 
+  color: #FF0000;
+}
+
+.set-alignment {
+  vertical-align: top;
+}
+
+
+.pred-text-size {
+	font-size: 30px;
+}
+
+.explain-text-size {
+	font-size: 14px;
+}
+
+
+.bground-color {
+	background-color: #F8F8F8; /* #1B2A49;  #1B2A49; #F8F8F8;  rgb(248,248,248) */
+}
+
+.text-color {
+	color: #404040;  /*rgb(64,64,64) */
+}
+
+
+.info-font {
+	font-size: 16px;
+}
+
+.fname-font {
+	font-size: 14px;
+}
+
+
+li {
+	font-family: 'Roboto', serif;
+	font-size: 14px;
+}
+
+a:hover { 
+  color: #FF0000;
+}
+
+a {
+	text-decoration: none;
+}
+
+
+
+.hide {
+	display: none;
+}
+
+
+.space-letters-large {
+	letter-spacing: .1em;
+}
+
+
+.space-letters {
+	letter-spacing: .05em;
+}
+
+
+
+.unblock {
+display: inline-block;
+}
+
+
+
+input[type="file"] {
+    opacity: 1;
+    
+}
+
+
+.dont-break-out {
+	/*These are technically the same but use both 
+	to ensure all browsers are supported*/
+	overflow-wrap: break-word;
+	word-wrap: break-word;
+}
+
+
+.normal-header {
+	display: block;
+}
+
+.mobile-header {
+	display: none;
+}
+
+
+.btn-font {
+	font-size: 18px;
+	letter-spacing: .05em;
+}
+
+
+
+
+.adjust-image {
+
+	height: 450px;
+	
+}
+
+
+.bottom-margin {
+	margin-bottom: 100px;
+}
+
+
+/*
+-----------------
+MEDIA QUERIES
+-----------------
+
+*** IMPORTANT NOTE: ***
+The order of the media queries below is important.
+Tablets must come before laptops/desktops.
+And note that we are using device width and not screen width
+for tablets and laptops/desktops.
+
+*/
+/* Large devices (laptops/desktops, 992px and up) */
+
+
+
+
+@media only all and (min-device-width: 520px) {
+/*Tablets*/
+
+ 
+.title-text {
+	font-size: 18px;
+}
+
+.info-text {
+	font-size: 16px;
+}
+
+.results-text {
+	font-size: 20px;
+}
+
+
+.preds-text {
+	font-size: 18px;
+}
+
+.message-text {
+	font-size: 18px;
+}
+
+.spin-text {
+	font-size: 16px;
+}
+
+
+
+
+} /*Close Media Query*/
+
+
+
+@media only all and (min-device-width: 520px) and (orientation: landscape) {
+/*Tablets in landscape*/
+
+
+} /*Close Media Query*/
+
+
+
+
+@media only all and (min-device-width: 1200px) {
+/* Devices that are Laptops and Desktops */
+
+
+.title-text {
+	font-size: 16px;
+}
+
+.info-text {
+	font-size: 12px;
+}
+
+.results-text {
+	font-size: 16px;
+}
+
+
+.preds-text {
+	font-size: 16px;
+}
+
+.message-text {
+	font-size: 14px;
+}
+
+.spin-text {
+	font-size: 14px;
+}
+
+
+
+
+.btn-font {
+	font-size: 15px;
+	letter-spacing: .03em;
+}
+
+
+
+.adjust-image {
+	max-width: 500px;
+	
+}
+
+
+}/*Close Media Query*/
+
+
+
+@media only screen and (max-width: 480px) {
+/*Cellphone Screens*/
+
+
+
+.normal-header {
+	display: none;
+}
+
+.mobile-header {
+	display: block;
+}
+
+
+
+} /*Close Media Query*/
+
+
+
+
+@media only screen and (max-width: 480px) and (orientation: portrait){
+/*Cellphone Screens in portrait*/
+
+
+.title-text {
+	font-size: 18px;
+}
+
+.info-text {
+	font-size: 16px;
+}
+
+.results-text {
+	font-size: 18px;
+}
+
+
+.preds-text {
+	font-size: 16px;
+}
+
+.message-text {
+	font-size: 16px;
+}
+
+.spin-text {
+	font-size: 14px;
+}
+
+
+
+
+
+.btn-font {
+	font-size: 18px;
+	letter-spacing: .03em;
+}
+
+
+.adjust-image {
+	max-height: 300px;
+	max-width: 100%;
+	margin-bottom: 0px;
+}
+
+.space-letters {
+	letter-spacing: .03em;
+}
+
+
+.bottom-padding {
+	padding-bottom: 200px;
+}
+
+
+.fname-font {
+	font-size: 16px;
+}
+
+.results-box {
+	width: 100%;
+}
+
+
+
+} /*Close Media Query*/
+
+
+
+
+@media only screen and (max-width: 480px) and (orientation: landscape){
+/*Cellphone Screens in landscape*/
+
+
+.btn-font {
+	font-size: 12px;
+	letter-spacing: .03em;
+}
+
+.add-margintop {
+	margin-top: 10%;
+}
+
+
+.adjust-image {
+	max-width: 60%;
+	margin-bottom: 10px;
+}
+
+.space-letters {
+	letter-spacing: .03em;
+}
+
+
+.normal-header {
+	display: none;
+}
+
+
+} /*Close Media Query*/
+
+

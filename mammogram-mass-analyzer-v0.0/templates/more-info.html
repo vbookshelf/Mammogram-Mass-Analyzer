@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+
+<head>
+<meta charset="utf-8">
+<title>Model Card and App Info</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<!--CSS Stylesheets-->
+<link rel="stylesheet" href="/static/css/w3.css">
+<link rel="stylesheet" href="/static/css/woza.css">
+
+
+<!--Link to fonts from Google fonts-->
+<link href="https://fonts.googleapis.com/css?family=Oswald:300" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+
+<link rel="shortcut icon" type="image/png" href="/static/assets/w.jpg">
+
+</head>
+
+
+
+
+
+
+<body class="w3-pale-blue">
+<!-- w3-content defines a container for fixed size centered content,
+and is wrapped around the whole page content. -->
+
+<div style="max-width:1500px">
+<!-- 1. HOME PAGE TAB -->
+<div class="w3-animate-opacity w3-padding w3-margin-bottom">
+	
+
+	
+
+
+<!-- 960 width region -->
+<div class='w3-content w3-padding w3-white' style="max-width:960px">
+	
+	
+	
+<!-- Top Bar -->
+<div class='normal-bar w3-padding w3-round w3-text-black w3-opacity w3-small'>
+	
+
+	<p class="w3-padding-left no-margin space-letters w3-left-align unblock">
+	<a class="change-size" href="{{ url_for('home_func') }}"><b><-- Go Back</b></a>
+	</p>
+	
+	<p class="no-margin unblock space-letters w3-right">
+		
+		<a class="change-size" href="https://woza.work/"><b>Woza.Work</b></a> -
+		<a class="change-size" href="#contact"><b>Contact</b></a>
+		
+	</p>
+</div>
+	
+
+
+
+<div class="w3-text-purple w3-center w3-margin space-letters">
+
+	<h4>Model Card and App Info</h4>
+	
+</div>
+
+
+
+<div class='bottom-margin'>
+	
+	
+	<!-- Start of block -->
+	<div class='side-margin1 w3-round text-color space-letters 
+	w3-margin-bottom'>
+	
+			<p class='w3-text-purple topp-margin'><b>Model Revision Record</b></p>
+			
+			<div>
+				
+				<p>App name: Mammogram Mass Analyzer<br>
+					Model names: exp50_best.pt and exp51_best.pt
+				</p>
+				
+				<p>App deployment status: Prototype<br>
+					Version: 0.0<br>
+				Date: 18-Nov-2022<br>
+				Created by: vbookshelf<br>
+				Notes: Released for demonstration.</p>
+				
+			</div>
+			
+			<div>
+				
+				<p><b>Known Issues</b></p>
+				
+				<p>1- The latency (prediction time) is around 10 seconds per image. This is
+				because the CPU is being used for inference. This is also because two
+				models are being ensembled during inference. Inference would be faster with
+				a GPU.</p>
+				
+			</div>
+			
+			<hr>
+			
+			
+			<p class='w3-text-purple topp-margin'><b>Purpose</b></p>
+			
+			<p>This desktop app uses computer vision to detect masses on mammograms. It
+			takes full field digital mammograms in dicom format as input. It analyzes
+			each mammogram and then displays an image with bounding boxes drawn around
+			any masses. The predictions are made by two ensembled Yolov5l models. They
+			were fine tuned on data from the VinDr-Mammo dataset.</p>
+				
+			<p class='w3-text-purple topp-margin'><b>Patient Data Security</b></p>
+			
+			<p>This is a desktop application.<br>
+				- Patient data never leaves the user’s pc or laptop.<br>
+				- There's no tracking.<br>
+				- The code is fully accessible and therefore auditable for malware.</p>
+		
+			
+			
+			<p class='w3-text-purple topp-margin'><b>Input</b></p>
+			
+			<p>The app accepts mammograms only in dicom format. Multiple files can be
+				submitted at the same time.</p>
+			
+			
+			<p class='w3-text-purple topp-margin'><b>Output</b></p>
+			
+			<p>The app outputs images with bounding boxes drawn around the detected
+			masses.</p>
+				
+		
+			
+			
+			<p class='w3-text-purple topp-margin'><b>VinDr-Mammo Dataset Summary</b></p>
+
+			<div>
+				<p><a href="https://arxiv.org/abs/2203.11205" target='_blank' class="w3-text-blue">View Paper</a><br>
+					<a href="https://physionet.org/content/vindr-mammo/1.0.0/" target='_blank' class="w3-text-blue">View Dataset on Physionet</a><br>
+					VinDr-Mammo: A large-scale benchmark dataset for computer-aided diagnosis
+				in full-field digital mammography</p>
+			</div>
+
+			<div>
+				<ul>
+					<li>A large-scale full-field digital mammography dataset of 5,000 four-view exams</li>
+					<li>20,486 total mammograms in dicom format</li>
+					<li>18,232 mammograms contain no abnormal regions.</li>
+					<li>2254 mammograms contain abnormal findings.</li>
+					<li>Abnormal findings include: mass, calcification, asymmetries,
+						  architectural distortion and others.</li>
+					<li>Only findings with BI-RADS 3, 4, or 5 are annotated with bounding
+					boxes.</li>
+					<li>Contains many Density C and Density D images.</li>
+				</ul>
+			</div>
+
+
+
+			<p class='w3-text-purple topp-margin'><b>Creating the train and val datasets</b></p>
+
+			<div>
+				<p>To create the training and validation datasets I used only 1426 mammograms
+				from the VinDR-Mammo dataset. This was made up of:<br>
+				- All mammograms that contain masses (1226 images)<br>
+					- 200 normal images</p>
+
+				<p>The train test split was approx. 90/10.<br>
+				Total train images: 1280<br>
+					Total val images: 146</p>
+
+				<p>Train target distribution:<br>
+				Mass: 1100<br>
+					Normal: 180</p>
+
+				<p>Val target distribution:<br>
+				Mass: 126<br>
+					Normal: 20</p>
+
+				<p>Train density distribution:<br>
+				DENSITY C    1035<br>
+				DENSITY B     158<br>
+				DENSITY D      81<br>
+					DENSITY A 6</p>
+
+				<p>Val density distribution:<br>
+				DENSITY C    113<br>
+				DENSITY D     17<br>
+					DENSITY B     16</p>
+
+			</div>
+
+
+		<p class='w3-text-purple topp-margin'><b>Validation Results</b></p>
+
+			<div>
+
+				<p>These are the results produced by two ensembled Yolov5l models. Both models
+					were fine tuned on the same training data. A different augmentation setup
+					was used for each.</p>
+
+				<p>Val accuracy: 0.65<br>
+					Val recall: 0.63</p>
+
+				<p>The val dataset contained a large number of mammograms with Density C.
+				These are images of high density breasts that may be challenging for a human to analyze.
+					When assessing the model’s quality, this is an important point to
+				keep in mind. At first glance, an accuracy of 0.65 may not look exciting,
+				but if this score equals or surpasses what a human radiologist could
+				achieve on high density breast images, then this model’s performance is actually
+					very good.</p>
+
+				<p>Guideline used to calculate accuracy:<br>
+				If the model correctly detected a mass on an image, and the IOU between the
+				true and predicted bounding boxes was greater than 0, then the model was
+				deemed to be correct. It's not important for the app to precisely
+				annotate masses i.e. draw good bounding boxes. Its main purpose is
+					to guide the eye of the radiologist to a region of interest.</p>
+			</div>
+
+
+			
+			<p class='w3-text-purple topp-margin'><b>Confusion Matrix</b></p>
+			
+				<div>
+
+					<img class="w3-round" src="/static/assets/exp52-conf-matrix.png"  width="63%" alt="Confusion matrix">
+
+				</div>
+			
+			
+			<p class='w3-text-purple topp-margin'><b>Classification Report</b></p>
+			
+			<div>
+
+				<img class="w3-round" src="/static/assets/exp52-classif-report.png"  width="90%" alt="Classification report">
+			
+			</div>
+
+
+
+			<p class='w3-text-purple topp-margin'><b>Hardware</b></p>
+
+			<div>
+				<p>- 2x RTX A5000 GPUs<br>
+					- Trained on vast.ai</p>
+			</div>
+			
+			
+			<p class='w3-text-purple topp-margin'><b>Misc Info</b></p>
+
+			<div>
+			
+				<p>1- The model was trained using full field digital mammography images
+					(FFDM). If a user submits screen-film mammography images (SFM),
+					the model could produce poor results.</p>
+
+				<p>2- In practice users could submit images of varying quality. These images
+				could have been taken using different types of x-ray machines or even be
+				photos of x-ray films taken with cellphone cameras. These and other
+					real-world factors could reduce the accuracy of the model.</p>
+
+				<p>3- The app can easily be configured to use a GPU.</p>
+
+				<p>4- I used data augmentation and model ensembling to improve accuracy and
+					reduce overfitting.</p>
+				
+			</div>
+
+
+			<p class='w3-text-purple topp-margin'><b>Documentation</b></p>
+			
+				<p>All code is available on <a href="https://github.com/vbookshelf/Mammogram-Mass-Analyzer" target='_blank' class="w3-text-blue">GitHub.</a></p>
+
+
+
+			<p id='contact' class='w3-text-purple topp-margin'><b>License</b></p>
+
+				<p>The app code is available under an MIT License. But please note that the
+					trained models can't be used commercially because the training data is
+					licensed for scientific research use only.</p>
+
+
+
+			<p id='contact' class='w3-text-purple topp-margin'><b>Contact</b></p>
+			
+				<p>Email: contact -at- woza -dot- work<br>
+
+			
+
+		
+	</div>
+	<!-- End of block -->
+	
+</div>
+
+
+</div><!-- End of 960 width region -->
+
+
+</div><!--END OF HOME PAGE TAB-->
+</div> <!-- w3-content -->
+</body>
+</html>
+

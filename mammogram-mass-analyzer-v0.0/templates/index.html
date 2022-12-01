@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="utf-8">
+<title>Mammogram Mass Analyzer</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="A free desktop Ai tool to detect masses on mammograms.">
+
+
+
+<!--CSS Stylesheets-->
+<link rel="stylesheet" href="/static/css/w3.css">
+<link rel="stylesheet" href="/static/css/mammo.css">
+
+
+<!--Link to fonts from Google fonts-->
+<link href="https://fonts.googleapis.com/css?family=Oswald:300" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+
+
+<link rel="shortcut icon" type="image/png" href="/static/assets/w.jpg">
+
+<!-- This code will pre-load the sample images so the user can click
+through them smoothly, i.e. there'll be no jittering when the user
+clicks on the links to display the sample images.-->
+<link rel="preload" href="static/sample_images/2f9ab025b47b8ea002694ae047aa5cc2.png" as="image">
+<link rel="preload" href="static/sample_images/3a6dffa30940fa8f5e115a9888eae9e8.png" as="image">
+<link rel="preload" href="static/sample_images/3b824a3886501b395e22d78f817b4b13.png" as="image">
+
+
+<style>
+html,body,h2,h3,h4,p,h5,li {font-family: Roboto, "Helvetica", "Arial", sans-serif}
+</style>
+
+
+<style>
+
+/* Spinner
+https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_loader
+*/
+
+.loader {
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid #3498db;
+  width: 70px;
+  height: 70px;
+  -webkit-animation: spin 2s linear infinite; /* Safari */
+  animation: spin 2s linear infinite;
+}
+
+/* Safari */
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+</style>
+
+</head>
+
+
+
+
+<body class="bground-color"> <!-- body-->
+<!-- w3-content defines a container for fixed size centered content,
+and is wrapped around the whole page content. -->
+<div class="w3-content" style="max-width:1500px"> <!-- w3-content -->
+
+<!-- 1. HOME PAGE -->
+<div class="w3-animate-opacity"> <!-- home page -->
+	
+
+
+<!-- 960 width region -->
+<div class='w3-content w3-round w3-center w3-margin-top' style="max-width:960px"><!-- 960 width region -->
+
+
+
+	<div class="w3-padding-bottom w3-center unblock"> <!-- region 1 -->
+
+
+		<div class="w3-margin-right w3-margin-left" id="ajaxResponse">
+			<img id="selected-image" class="w3-round unblock" src="/static/assets/3a6dffa30940fa8f5e115a9888eae9e8.png"
+				 height="580" alt="Image for analysis">
+		</div>
+
+
+		<!-- DON'T DELETE THIS
+		This div is used in the ajax code that handles the file uploads.
+		Loading images like this into a hidden element is like pre-loading them.
+		 In this way the images load instantly when the user clicks
+		 on a link to display them.-->
+		<div class="hide" id="load-images-hidden">
+			<!--
+			<img class="w3-round unblock" src="/static/png-images/2ddfad7286c2b016931ceccd1e2c7bbc.png"  height="550">
+
+			The uploaded images are placed into image tags and loaded into this hidden div element.
+			Refer to the ajax code that handles image uploading.
+			-->
+		</div>
+
+		<!--
+		What is this uploading code doing?
+
+		1- When the user clicks the button a click is simulated on the file input (id="image-selector").
+		This allows the user to select the files to upload.
+		2- When the user has selected the files it triggers an onchange event, this simulates a click
+		on the button with id: id="upload-file-btn". This causes the files to be submitted.
+
+		-->
+		<!-- Button -->
+		<div id="btnn" class="w3-center w3-margin-top">
+			<button class="w3-btn w3-purple w3-hover-blue w3-round w3-margin-bottom adjust-spacing btn-font w3-padding w3-space-letters w3-text-white" onclick="setTimeout(simulateClick.bind(null, 'image-selector'), 200)">
+				Submit FFDM Dicom File/s</button>
+		</div>
+
+		<form id="upload-file" method="post" enctype="multipart/form-data">
+				<div class="hide">
+					<input id="image-selector" name="my_files" type="file" multiple>
+
+					<button id="upload-file-btn" type="button">Upload</button>
+				</div>
+		</form>
+
+	</div><!-- Region 1 -->
+
+
+
+
+	<!-- Results Box -->
+	<div class="w3-center w3-round text-color space-letters dont-break-out unblock set-alignment results-box dark-color bottom-margin"><!-- Results Box -->
+
+		<!-- Bar-->
+		<div class="">
+			<div class="w3-container w3-purple" style="height:5px;width:100%"></div>
+		</div>
+
+		<p class="w3-text-sand results-text">Mammogram Mass Analyzer<br>
+			<small>A desktop tool for detecting Masses on Mammograms</small></p>
+
+
+		<div class="w3-text-purple space-letters message-text w3-padding w3-border w3-white w3-left-align make-scrollable">
+
+			<div class="w3-padding w3-white w3-margin" id="pred_message_text">
+
+				<h5>Analysis in progress...</h5>
+				<p>When using a CPU this takes about 10 sec for setup, then about 10 sec per image.</p>
+
+				<div class="loader"></div>
+
+				<p>Please look at the console to see the status.</p>
+
+			</div>
+
+
+			<div id="file-names">
+
+				<div>
+					<p>Sample Results<br>
+					[ Click a file name ]</p>
+
+
+					<!-- These are the sample clickable images that appear when the page loads.
+					 Note that these images have been pre-loaded. Refer to the link tags in the head section.-->
+					<ul>
+
+						<li class="row w3-padding-bottom w3-text-black w3-border-right w3-border-black" onclick="ajaxSampleGetFilename(this.innerHTML)"><a href="#">1 result<br>3a6dffa30940fa8f5e115a9888eae9e8.dicom</a></li>
+
+						<li class="row w3-padding-bottom" onclick="ajaxSampleGetFilename(this.innerHTML)"><a href="#">1 result<br>2f9ab025b47b8ea002694ae047aa5cc2.dicom</a></li>
+						<li class="row w3-padding-bottom" onclick="ajaxSampleGetFilename(this.innerHTML)"><a href="#">1 result<br>3b824a3886501b395e22d78f817b4b13.dicom</a></li>
+
+					</ul>
+				</div>
+
+				<hr>
+
+				<div>
+					<p><b>1- What does this app do?</b></p>
+					<p class="w3-text-grey">This desktop app detects masses on mammograms. It takes full field digital
+						mammograms in dicom format as input. It analyzes each image and draws a
+						bounding box around each mass.<br>
+					Please refer to the <a href="/about" class="w3-text-blue">Model Card</a> for more info.</p>
+
+					<p><b>2- Can it also detect calcifications and architectural distortion?</b></p>
+					<p class="w3-text-grey">No. At this stage it can only detect masses.</p>
+
+					<p><b>3- How do I use it?</b></p>
+					<p class="w3-text-grey">Click the button to submit mammograms in dicom format.
+						Your files will be auto analyzed on submission.
+					A list of dicom file names will appear.
+					The number of detected masses will also be shown.
+					Click a file name to see the image with the bounding boxes drawn in.<br>
+					You'll find a few sample dicom files in the folder called sample_dicom_files.
+						You can use them to try the app.</p>
+				</div>
+			</div>
+
+		</div>
+
+
+
+	</div> <!-- Results Box -->
+
+</div><!-- End of 960 width region -->
+
+
+</div><!-- home page -->
+
+
+
+
+
+
+<!-- Hosting JQuery locally because this desktop app
+ must be able to run offline. -->
+<script src="/static/jquery/jquery-3.6.1.min.js">
+</script>
+
+
+<script>
+
+	// This is the ajax code that handles the file uploads.
+	// The response that it gets back from flask is a list.
+	// Each list item is html code that gets inserted into
+	// different parts of the page.
+
+    $(function() {
+    $('#upload-file-btn').click(function() {
+
+        var form_data = new FormData($('#upload-file')[0]);
+
+		// It could happen that the user clicks the button to
+		// upload files, but then clicks cancel. The prediction code could still
+		// activate because the code activates onchange.
+		// This if statement solves that problem. There is an id called image-selector
+		// in the file <input>. This if statement checks the length.
+		// Ref: https://stackoverflow.com/questions/40364692/check-if-formdata-is-empty
+
+        if(document.getElementById("image-selector").files.length != 0) {
+
+				// Clear the previous text
+				$("#file-names").text("");
+
+				// Show the pred message text
+				$("#pred_message_text").show();
+
+				console.log(form_data);
+
+				$.ajax({
+					type: 'POST',
+					url: '/upload_ajax',
+					data: form_data,
+					contentType: false,
+					cache: false,
+					processData: false,
+					success: function(result){
+
+						// Hide the pred message text
+						$('#pred_message_text').hide();
+						$('#faq-text').hide();
+
+						$("#ajaxResponse").html(result.main_image_str);
+
+						// Here we loading the images inside a hidden div element.
+						// This is like pre-loading the images so they are available
+						// immediately when the user clicks a link. The image display process is smooth.
+						$("#load-images-hidden").html(result.image_fin_str);
+
+						$("#file-names").html(result.html_str);
+
+						},
+				});
+
+		} else {
+		  //  No images have ben selected.
+		  console.log("No files selected");
+		}
+
+    });
+	});
+
+</script>
+
+
+<script>
+
+	// This functions clicks an element with a given id.
+
+	function simulateClick(tabID) {
+		document.getElementById(tabID).click();
+	}
+
+
+
+	// This is an onchange function.
+	// It detects when the user has selected the files to upload.
+	// It then clicks the upload button.
+
+	$("#image-selector").change(function() {
+
+		// Simate a click on the button with id=upload-file-btn
+		simulateClick("upload-file-btn");
+	 });
+
+
+
+
+	// How to highlight selected <li> item only?
+	//https://stackoverflow.com/questions/52973660/how-to-highlight-selected-li-item-only
+
+	jQuery(document).ready(function(){
+		jQuery('li').click(function(event){
+			//remove all pre-existing active classes
+			jQuery('.row').removeClass('w3-text-black w3-border-right w3-border-black');
+
+			//add the active class to the link we clicked
+			jQuery(this).addClass('w3-text-black w3-border-right w3-border-black');
+			event.preventDefault();
+		});
+	});
+
+
+
+	// After uploading, when the user clicks a file name this is the
+	// code that gets activated.
+	// This is the ajax code for replacing the main image on the page
+	// with the image from a dicom file that the user has uploaded.
+	// It sends the files to the flask endpoint called process_ajax.
+
+	function ajaxGetFilename(fname) {
+		$.ajax({
+				type: "POST",
+				url: "{{ url_for('process_ajax') }}",
+				data: {'file_name': fname},
+				success: function(result){
+					console.log(result.output1);
+							$("#ajaxResponse").html(result.output1);
+						  }
+		})
+	}
+
+
+
+
+
+	// When the user clicks a sample file name this is the
+	// code that gets activated.
+	function ajaxSampleGetFilename(fname) {
+
+		$.ajax({
+				type: "POST",
+				url: "{{ url_for('process_sample_ajax') }}",
+				data: {'file_name': fname},
+				success: function(result){
+					console.log(result.output1);
+							$("#ajaxResponse").html(result.output1);
+						  }
+		})
+	}
+
+</script>
+
+
+<script>
+
+	// When the page loads fo the first time:
+	$('#pred_message_text').hide();
+	$('.active-button').hide();
+
+</script>
+
+	
+	
+</div> <!-- w3-content -->
+</body> <!-- body -->
+</html>
+
