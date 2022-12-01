@@ -143,9 +143,11 @@ While the app is analyzing, please look in the console to see if there are any e
 ## 4- Model Training and Validation
 
 The model card contains a summary of the training and validation datasets as well as the validation results. I've also included a confusion matrix and classification report. There's also some info on the app. Please refer to this document:
+https://github.com/vbookshelf/Mammogram-Mass-Analyzer/blob/main/mammogram-mass-analyzer-v0.0/Model-Card-and-App-Info.pdf
 
 All the project jupyter notebooks are stored in the folder called "Notebooks". There are five notebooks. 
-Each notebook was run in one of three locations: Locally on my laptop, on Kaggle and on VAST.
+Each notebook was run in one of three locations: Locally on my laptop, on Kaggle and on VAST.<br>
+https://github.com/vbookshelf/Mammogram-Mass-Analyzer/tree/main/mammogram-mass-analyzer-v0.0/Notebooks
 
 Exp_06-LOCAL
 This contains the code to select the training and validation data from the original VinDr-Mammo dataset.
