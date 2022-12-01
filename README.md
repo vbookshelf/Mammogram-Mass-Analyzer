@@ -142,7 +142,7 @@ While the app is analyzing, please look in the console to see if there are any e
 
 ## 4- Model Training and Validation
 
-The model card contains a summary of the training and validation datasets as well as the validation results. I've also included a confusion matrix and classification report. There's also some info on the app. Please refer to this document:<br>
+The model card contains a summary of the training and validation datasets as well as the validation results. I've also included a confusion matrix and classification report. There's also some info about the app. Please refer to this document:<br>
 https://github.com/vbookshelf/Mammogram-Mass-Analyzer/blob/main/mammogram-mass-analyzer-v0.0/Model-Card-and-App-Info.pdf
 
 All the project jupyter notebooks are stored in the folder called "Notebooks". There are five notebooks. 
@@ -172,7 +172,7 @@ The code for ensembling the two models and checking the performance of this ense
 
 All code that I have created is free to use under an MIT license.
  
-However, please note that the VinDR-Mammo dataset that was used to train the model is licensed under a PhysioNet Restricted Health Data License 1.5.0. - this means that the data can be used for scientific research only. Therefore, the model that powers this app cannot be used for commercial purposes.<br>
+However, please note that the VinDr-Mammo dataset that was used to train the model is licensed under a PhysioNet Restricted Health Data License 1.5.0. - this means that the data can be used for scientific research only. Therefore, the model that powers this app cannot be used for commercial purposes.<br>
 PhysioNet Restricted Health Data License 1.5.0<br>
 https://physionet.org/content/vindr-mammo/view-license/1.0.0/
 
