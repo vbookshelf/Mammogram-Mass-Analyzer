@@ -180,7 +180,7 @@ Goldberger, A., Amaral, L., Glass, L., Hausdorff, J., Ivanov, P. C., Mark, R., .
 
 ## 7- Acknowledgements
 
-I don’t have my own GPU. I trained the model using Kaggle Notebooks. Many thanks to Kaggle for the free GPU and other great resources they continue to provide.
+Many thanks to Kaggle for the free GPU and other great resources they continue to provide.
 
 I also want to thank VinDR for the dataset that they’ve generously made publicly available.
 
