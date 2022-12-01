@@ -149,19 +149,19 @@ All the project jupyter notebooks are stored in the folder called "Notebooks". T
 Each notebook was run in one of three locations: Locally on my laptop, on Kaggle and on VAST.<br>
 https://github.com/vbookshelf/Mammogram-Mass-Analyzer/tree/main/mammogram-mass-analyzer-v0.0/Notebooks
 
-Exp_06-LOCAL
+Exp_06-LOCAL<br>
 This contains the code to select the training and validation data from the original VinDr-Mammo dataset.
 
-Exp_49-Kaggle
+Exp_49-Kaggle<br>
 This contains the code to create 10 folds. Only fold 0 was used for training and validation.
 
-Exp_50-VAST
+Exp_50-VAST<br>
 The code for training and validating the first model.
 
-Exp_51-VAST
+Exp_51-VAST<br>
 The code for training and validating the second model.
 
-Exp_52-Kaggle
+Exp_52-Kaggle<br>
 The code for ensembling the two models and checking the performance of this ensemble on the Fold 0 validation data.
 
 
@@ -193,7 +193,7 @@ Goldberger, A., Amaral, L., Glass, L., Hausdorff, J., Ivanov, P. C., Mark, R., .
 
 Many thanks to Kaggle for the free GPU and other great resources they continue to provide.
 
-I also want to thank VinDR for the dataset that they’ve generously made publicly available.
+I also want to thank the VinDr team for the dataset that they’ve generously made publicly available.
 
 Many thanks to the team at Ultralytics for the Yolov5 model and pre-trained weights they’ve made freely available..
 
