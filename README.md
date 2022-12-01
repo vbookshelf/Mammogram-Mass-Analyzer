@@ -56,7 +56,10 @@ Add gif here..
 
 ### First download the project folder from Kaggle
 
-I've stored the project folder (named mammogram-mass-analyzer-v0.0) in a Kaggle dataset. I suggest that you download the project folder from the Kaggle instead of from this GitHub repo. This is because the project folder on Kaggle includes the two trained models. The project folder in this repo does not included the trained models because GitHub does not allow files larger than 25MB to be uploaded.<br>
+I've stored the project folder (named mammogram-mass-analyzer-v0.0) in a Kaggle dataset.<br>
+https://www.kaggle.com/datasets/vbookshelf/mammogram-mass-analyzer-v00
+
+I suggest that you download the project folder from the Kaggle instead of from this GitHub repo. This is because the project folder on Kaggle includes the two trained models. The project folder in this repo does not include the trained models because GitHub does not allow files larger than 25MB to be uploaded.<br>
 The models are located inside a folder called TRAINED_MODEL_FOLDER, which is located inside the yolov5 folder:<br>
 mammogram-mass-analyzer-v0.0/yolov5/TRAINED_MODEL_FOLDER/
 
