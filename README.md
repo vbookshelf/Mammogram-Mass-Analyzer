@@ -47,7 +47,7 @@ This app can also be used as an example when building other computer vision desk
 
 - It’s not a one click setup. The user needs to have a basic knowledge of how to use the command line to set up a virtual environment, download requirements and launch a python app.
 - The inference time is about 10 seconds per image, because inference is being done on the CPU.
-- When diagnosing breast cancer radiologists look for masses, calcifications and architectural distortions. However, this app can only detect masses. The model was not trained to detect calcifications and architectural distortions because there was not enough data for these classes.
+- When diagnosing breast cancer radiologists look for masses, calcifications and architectural distortions. However, this app can only detect masses.
 - The amount of positive samples in the training data was limited. The accuracy and recall could be improved with more training data.
 
 
