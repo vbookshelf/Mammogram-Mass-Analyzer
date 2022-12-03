@@ -247,4 +247,5 @@ CC - craniocaudal (looking through the breast from above)<br>
 MLO - mediolateral oblique (looking through the breast from the side)<br>
 L - Patient's left<br>
 R - Patient's right<br>
+DICOM - Digital Imaging and Communications in Medecine<br>
 
