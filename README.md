@@ -67,6 +67,12 @@ mammogram-mass-analyzer-v0.0/yolov5/TRAINED_MODEL_FOLDER/
 
 <br>
 
+### System Requirements
+
+You'll need about 1.5GB of free disk space. Other than that there are no special system requirements. This app will run on a CPU. I have an old 2014 Macbook Pro laptop with 8GB of RAM. This app runs on it without any issues.
+
+<br>
+
 ### Overview
 
 This is a standard flask app. The steps to set up and run the app are the same for both Mac and Windows.
