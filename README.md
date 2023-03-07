@@ -228,6 +228,9 @@ The Complete Python Course | Learn Python by Doing in 2022<br>
 Udemy<br>
 https://www.udemy.com/course/the-complete-python-course/
 
+In order to understand the Flask code used to build this app, it's important to first know how to use Flask with Ajax. Here's a simple example:<br>
+https://github.com/vbookshelf/Flask-Experiments/tree/main/Exp_11-working-ajax-flask-request-response-example-template
+
 Flask experiments<br>
 https://github.com/vbookshelf/Flask-Experiments
 
