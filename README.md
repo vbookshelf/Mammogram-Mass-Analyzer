@@ -269,5 +269,5 @@ https://github.com/ZFTurbo/Weighted-Boxes-Fusion
 2- Use Faster-RCNN or Mask-RCNN to train the model. A simple Pytorch Mask-RCNN fine-tuning workflow is explained in this blog post by Eric Chen:<br>
 https://haochen23.github.io/2020/06/fine-tune-mask-rcnn-pytorch.html#.ZAc9TOxBzUJ
 
-
+3- Allow users to submit png and jpg images in addition to dicom files.
 
