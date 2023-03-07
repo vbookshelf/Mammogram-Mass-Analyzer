@@ -260,7 +260,9 @@ DICOM - Digital Imaging and Communications in Medicine
 ## 10 - Ideas to improve this app
 
 1- Use yolov5 with torch hub during inference. This will speed up inference. I used this method in this project:<br>
-https://github.com/vbookshelf/Wheat-Head-Auto-Counter
+https://github.com/vbookshelf/Wheat-Head-Auto-Counter<br>
+To ensemble the two models you could use a technique called Weighted Boxes Fusion:<br>
+https://github.com/ZFTurbo/Weighted-Boxes-Fusion
 
 2- Use Faster-RCNN or Mask-RCNN to train the model. A simple Pytorch Mask-RCNN fine-tuning workflow is explained in this blog post by Eric Chen:<br>
 https://haochen23.github.io/2020/06/fine-tune-mask-rcnn-pytorch.html#.ZAc9TOxBzUJ
