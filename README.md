@@ -253,5 +253,17 @@ CC - craniocaudal (looking through the breast from above)<br>
 MLO - mediolateral oblique (looking through the breast from the side)<br>
 L - Patient's left<br>
 R - Patient's right<br>
-DICOM - Digital Imaging and Communications in Medecine<br>
+DICOM - Digital Imaging and Communications in Medicine
+
+<br>
+
+## 10 - Some possible ways to improve this app
+
+1- Use yolov5 with torch hub during inference. This will speed up inference. I used this method in this project:<br>
+https://github.com/vbookshelf/Wheat-Head-Auto-Counter
+
+2- Use Faster-RCNN or Mask-RCNN to train the model. The workflow is well explained in this blog post by Eric Chen:<br>
+https://haochen23.github.io/2020/06/fine-tune-mask-rcnn-pytorch.html#.ZAc9TOxBzUJ
+
+
 
