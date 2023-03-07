@@ -259,6 +259,8 @@ DICOM - Digital Imaging and Communications in Medicine
 
 ## 10 - Ideas to improve this app
 
+These are some ideas I've had since I finished this project. I don't have the time to build them into this app.
+
 1- Use yolov5 with torch hub during inference. This will speed up inference. I used this method in this project:<br>
 https://github.com/vbookshelf/Wheat-Head-Auto-Counter<br>
 To ensemble the two models you could use a technique called Weighted Boxes Fusion:<br>
